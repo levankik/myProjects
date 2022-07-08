@@ -1,9 +1,12 @@
 import {Button, Form, FormControl, InputGroup, Modal} from "react-bootstrap";
 import {Plus as AddIcon} from "react-bootstrap-icons";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import UserContext from "../UserContext";
 
 function TodoEditModal ({task, onAfterEdit, onHide}) {
     const [value, setValue] = useState(String(task?.text)||'');
+
+    const {user} = useContext(UserContext);
 
     useEffect(() => {
         task && setValue(task.text || '');
@@ -11,7 +14,7 @@ function TodoEditModal ({task, onAfterEdit, onHide}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onAfterEdit && onAfterEdit ({...task, text: value});
+        onAfterEdit && onAfterEdit ({...task, text: value, username: user.username});
         close();
     }
 

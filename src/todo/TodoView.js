@@ -1,8 +1,10 @@
-import {Button, Container, Form, FormControl, InputGroup, ListGroup, Modal, Row} from "react-bootstrap";
+import {Badge, Button, Container, Form, FormControl, InputGroup, ListGroup, Modal, Row} from "react-bootstrap";
 import {Plus as AddIcon, XCircleFill as DeleteIcon, Pencil as EditIcon} from 'react-bootstrap-icons';
 import {useEffect, useState} from "react";
 import TodoEditModal from "./TodoEditModal";
 import api from './api.js';
+import {useUserContext}  from  "../UserContext";
+import PropTypes from "prop-types";
 
 function MyListItem({task, onToggleDone, onDelete, onEdit}) {
 
@@ -27,6 +29,7 @@ function MyListItem({task, onToggleDone, onDelete, onEdit}) {
                     )
                 }
             </div>
+            <Badge bg="info" className="me-3">{task.username}</Badge>
             <Button variant="link" size="sm" onClick={handleEdit}>
                 <EditIcon size={20} className="text-secondary"/>
             </Button>
@@ -37,10 +40,24 @@ function MyListItem({task, onToggleDone, onDelete, onEdit}) {
     )
 }
 
-function TodoView() {
+MyListItem.propTypes = {
+    task: PropTypes.shape ({
+        id: PropTypes.number,
+        text: PropTypes.string,
+        done: PropTypes.bool,
+    }).isRequired,
+    onToggleDone: PropTypes.func,
+    onDelete: PropTypes.func,
+    onEdit: PropTypes.func
+}
+
+
+function TodoView ({theme})  {
     const [value, setValue] = useState('');
     const [tasks, setTasks] = useState([]);
     const [currentTask, setCurrentTask] = useState(null);
+
+    const {user} = useUserContext();
 
     useEffect(() => {
         loadTasks().catch(console.error);
@@ -53,7 +70,7 @@ function TodoView() {
 
     const addNewTask = async (event) => {
         event.preventDefault();
-        await api.post('/', {text: value, done: false});
+        await api.post('/', {text: value, done: false, username: user.username});
         await loadTasks();
         setValue('');
     };
@@ -61,20 +78,20 @@ function TodoView() {
     const toggleDone = (id) => async (event) => {
         const task = tasks.find((task) => task.id === id);
         task.done = event.target.checked;
-        await api.put (`//${id}` , task);
+        await api.put (`${id}` , task);
         await loadTasks();
     };
 
     const deleteTask = async (task) => {
         const answer = window.confirm(`Are you sure you want to delete task ${task.text}`)
         if (answer) {
-           await api.delete(task.id);
+           await api.delete(`${task.id}`);
            await loadTasks();
         }
     }
 
     const updateTask = async (updatedTask) => {
-        await api.put(updatedTask.id, updatedTask);
+        await api.put(`${updatedTask.id}`, updatedTask);
         await loadTasks();
     }
 
@@ -106,7 +123,7 @@ function TodoView() {
                     tasks.filter(task => !task.done).map((task) => (
                         <MyListItem
                             key={task.id}
-                            task={task}
+                            task = {task}
                             onToggleDone={toggleDone(task.id)}
                             onDelete={deleteTask}
                             onEdit={openEditModal}
@@ -137,5 +154,8 @@ function TodoView() {
     )
 }
 
-
 export default TodoView;
+
+TodoView.propTypes = {
+    theme: PropTypes.oneOf (['light', 'dark'])
+}

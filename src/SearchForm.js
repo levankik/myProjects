@@ -1,7 +1,6 @@
 import React from 'react';
-import {Form, Row, Col, Button, Alert} from 'react-bootstrap';
+import {Form, Row, Col, Button} from 'react-bootstrap';
 import {useState} from "react";
-import axios from 'axios';
 
 export default SearchForm;
 
@@ -33,16 +32,13 @@ function SearchForm({onSearch}) {
         }, {});
     }
 
-
     const handleChange = (event) => {
         const {name, value} = event.target;
         setValues({...values, [name]: value});
     };
 
-
     return (
         <Form onSubmit={search} onReset={reset}>
-            <Alert variant="primary"> alert </Alert>
             <Row>
                 <Col lg={3}>
                     <Form.Group className="mb-3">
@@ -99,7 +95,6 @@ function SearchForm({onSearch}) {
                     Search
                 </Button>
             </div>
-
         </Form>
     )
 }

@@ -1,11 +1,14 @@
 import Header from "./Header";
 import {Outlet} from 'react-router-dom';
 import React from 'react';
+import {useThemeContext} from "./ThemeContext";
 
-function Layout() {
+function Layout({onThemeChange}) {
+    const theme = useThemeContext();
+    const className = theme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark'
     return (
-        <div>
-            <Header/>
+        <div className={className}>
+            <Header onThemeChange={onThemeChange}/>
             <Outlet/>
         </div>
     )

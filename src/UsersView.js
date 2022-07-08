@@ -1,7 +1,5 @@
-import SearchForm from './SearchForm';
 import UsersTable from "./UsersTable";
 import React from 'react';
-import {Stack} from 'react-bootstrap';
 import {useEffect, useState} from 'react';
 import axios from "axios";
 
@@ -17,11 +15,12 @@ function UsersView () {
         console.log('SearchForm was submitted')
     }
 
+    //<SearchForm onSearch = {search}/>
+    //<Stack gap={1} className="mb-3"></Stack>
+
+
     return (
-        <Stack gap={4} className="mb-3">
-            <SearchForm onSearch = {search}/>
             <UsersTable data={users}/>
-        </Stack>
     )
 }
 export default UsersView;
