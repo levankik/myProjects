@@ -12,25 +12,31 @@ import ThemeContext from "./ThemeContext";
 import LoginView from "./LoginView";
 import {useEffect} from "react";
 import axios from "axios";
+import api from "./todo/api";
 
 
 function App() {
     const [user, setUser] = useState(null);
     const [error, setError] = useState('');
     const [theme, setTheme] = useState('light');
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            axios.get('http://localhost:3030/user', {
+            api.get('/user', {
                 headers: {
                     "Authorization": token
                 }
             })
-                .then((res) => setUser(res.data))
+                .then(res => {setUser(res.data)})
                 .catch(err => setError(err.message))
+                .finally(() => setChecked(true));
+        } else {
+            setChecked (true);
         }
-    }, [])
+    }, []);
+
     return (
         <ThemeContext.Provider value={theme}>
             <UserContext.Provider value={{user, setUser}}>
@@ -48,8 +54,10 @@ function App() {
                                 <Route path="todo" element={<TodoView theme='light'/>}/>
                                 <Route path="*" element={<Alert variant="danger">page not found</Alert>}/>
                             </Route>
-                        ) : (
-                            <Route path="*" element={<LoginView error={error} onError={(e) => setError(e.message)}/>}/>
+                        ) : checked && (
+                            <Route path="*"
+                                   element={<LoginView error={error} onError={(e) => setError(e.message)}/>
+                            }/>
                         )
                         }
                     </Routes>
