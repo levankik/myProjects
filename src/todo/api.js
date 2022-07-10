@@ -27,7 +27,7 @@ api.interceptors.response.use(function (response) {
     showError(error);
     if (axios.isAxiosError(error)) {
         switch  (error.response.status) {
-            case 401:
+            case  401:
                 break;
             case 404:
                 break;
