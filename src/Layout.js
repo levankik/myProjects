@@ -1,8 +1,8 @@
 import Header from "./Header";
 import {Outlet} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
-import {useThemeContext} from "./ThemeContext";
-import LoadingContext from "./LoadingContext";
+import {useThemeContext} from "./contexts/ThemeContext";
+import LoadingContext from "./contexts/LoadingContext";
 import Loading from "./Loading";
 import eventBus from "./MyEventBus";
 import {Alert, Toast} from 'react-bootstrap';

@@ -1,7 +1,6 @@
-import {Alert, Table, Pagination} from "react-bootstrap";
-import axios from 'axios';
+import {Alert, Table} from "react-bootstrap";
 import React from 'react';
-import {useThemeContext} from "./ThemeContext";
+import {useThemeContext} from "../contexts/ThemeContext";
 
 function UsersTable({data = [],}) {
     const theme = useThemeContext();

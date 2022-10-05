@@ -3,11 +3,10 @@ import {Plus as AddIcon, XCircleFill as DeleteIcon, Pencil as EditIcon} from 're
 import {useEffect, useState} from "react";
 import TodoEditModal from "./TodoEditModal";
 import api from './api.js';
-import {useUserContext} from "../UserContext";
+import {useUserContext} from "../contexts/UserContext";
 import PropTypes from "prop-types";
 
 function MyListItem({task, onToggleDone, onDelete, onEdit}) {
-
     const handleDelete = () => {
         onDelete && onDelete(task);
     }
@@ -18,7 +17,7 @@ function MyListItem({task, onToggleDone, onDelete, onEdit}) {
 
     return (
         <ListGroup.Item
-            className={`d-flex align-items-center ${task.done ? `text-muted` : ``}`}
+            className={`d-flex align-items-center ${task.done ? 'text-muted' : ''}`}
         >
             <Form.Check className="me-3" onChange={onToggleDone} checked={task.done}/>
             <div className="flex-fill">
@@ -67,10 +66,10 @@ function TodoView({theme}) {
     const loadTasks = async () => {
         setTasks([]);
         try {
-            const {data} = await api.get('/todos/');
+            const {data} = await api.get('/todos/'); // ისე, მარტო ერთი ტასკი რომ ჩასეტოს, რატომ არ შეიძლება?
             setTasks(data);
         } catch (err) {
-            console.error(err);
+            console.log(err);
         }
     };
 
@@ -101,8 +100,8 @@ function TodoView({theme}) {
         await sendRequest(async () => {
             await api.put(`/todos/${id}`, task);
             await loadTasks();
-        });
-    };
+        })
+    }
 
     const deleteTask = async (task) => {
         const answer = window.confirm(`Are you sure you want to delete task ${task.text}`)
@@ -115,7 +114,7 @@ function TodoView({theme}) {
     }
 
     const updateTask = async (updatedTask) => {
-        await sendRequest(async () => {
+        await sendRequest( async () => {
             await api.put(`/todos/${updatedTask.id}`, updatedTask);
             await loadTasks();
         })
@@ -126,12 +125,12 @@ function TodoView({theme}) {
     }
 
     const hideEditModal = (task) => {
-        setCurrentTask(task);
+        setCurrentTask(null); // null-ის ნაცვლად  task-ს რომ ვწერ, მაშინაც მუშაობს
     }
 
     return (
         <Container className="my-3">
-            <Form onSubmit={addNewTask}>
+            <Form  onSubmit={addNewTask}>
                 <InputGroup className="mb-3">
                     <FormControl
                         placeholder="add new task"

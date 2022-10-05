@@ -1,12 +1,12 @@
 import {Button, Form, FormControl, InputGroup, Modal} from "react-bootstrap";
-import {Plus as AddIcon} from "react-bootstrap-icons";
-import {useContext, useEffect, useState} from "react";
-import UserContext from "../UserContext";
+import {useEffect, useState} from "react";
+import {useUserContext} from "../contexts/UserContext";
 
-function TodoEditModal ({task, onAfterEdit, onHide}) {
-    const [value, setValue] = useState(String(task?.text)||'');
+function TodoEditModal({task, onAfterEdit, onHide}) {
+    const [value, setValue] = useState(String(task?.text) || ''); // მარტო ''-ს რომ ვტოვებ აქ ფრჩხილებში, მაინც იმუშავებს
+    // ალბათ useEffect-ის გამო
 
-    const {user} = useContext(UserContext);
+    const {user} = useUserContext();
 
     useEffect(() => {
         task && setValue(task.text || '');
@@ -14,19 +14,23 @@ function TodoEditModal ({task, onAfterEdit, onHide}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onAfterEdit && onAfterEdit ({...task, text: value, username: user.username});
+        onAfterEdit && onAfterEdit({...task, text: value, username: user.username});
         close();
     }
 
-    const close = () => onHide && onHide();
+    const close = () => {
+        onHide && onHide();
+    }
+
     return (
         task ? (
-        <Modal show={true} onHide={() => onHide && onHide()}>
-            <Modal.Header closeButton>
-                <Modal.Title>{`Editing task ${task.text}`}</Modal.Title>
-            </Modal.Header>
+            <Modal show={true} onHide={close}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{`Editing task ${task.text}`}</Modal.Title>
+                </Modal.Header>
                 <Modal.Body>
-                    <Form  onSubmit={handleSubmit}>
+                    {task.text}
+                    <Form onSubmit={handleSubmit}>
                         <InputGroup className="mb-3">
                             <FormControl
                                 placeholder="enter new task"
@@ -34,12 +38,12 @@ function TodoEditModal ({task, onAfterEdit, onHide}) {
                                 onChange={(e) => setValue(e.target.value)}
                             />
                             <Button type="submit" variant="outline-secondary">
-                               Edit
+                                Edit
                             </Button>
                         </InputGroup>
                     </Form>
                 </Modal.Body>
-        </Modal>
+            </Modal>
         ) : null
     )
 }

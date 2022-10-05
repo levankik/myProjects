@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {Spinner} from "react-bootstrap";
-import './Loading.scss';
+import './scss/Loading.scss';
 
 function Loading({text}) {
     return (

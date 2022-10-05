@@ -1,0 +1,12 @@
+$padding: 10px;
+$bg-color: gray;
+
+.fancy-border {
+  border: 10px dashed $bg-color;
+  padding: $padding;
+  box-shadow: 0 0 6px -1px black;
+  .inner-div {
+    border: 1px solid gray;
+    padding: $padding;
+  }
+}

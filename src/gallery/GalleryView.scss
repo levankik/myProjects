@@ -1,6 +1,7 @@
 .album-card {
   pointer: default;
   min-height: 120px;
+  height: 100%;
   background-color: #4caf50;
   &:hover {
     background-color: #0dcaf0;

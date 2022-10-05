@@ -17,7 +17,6 @@ function Photos({album}) {
             });
             setPhotos(res.data);
         }
-
         loadPhotos().catch(console.error);
     }, [album.id]);
 
@@ -51,10 +50,9 @@ function Photos({album}) {
                 }
             </Row>
             <Modal fullscreen show={showModal} onHide={closePhoto}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{currentPhoto?.title}</Modal.Title>
-                </Modal.Header>
+                <Modal.Header closeButton></Modal.Header>
                 <Modal.Body className="text-center">
+                    <Modal.Title className="mb-3"> {currentPhoto?.title}</Modal.Title>
                     <Image
                         src={currentPhoto?.url}
                         alt={currentPhoto?.title}
@@ -63,7 +61,6 @@ function Photos({album}) {
                             maxHeight: '100%'
                     }}
                     >
-
                     </Image>
                 </Modal.Body>
             </Modal>

@@ -17,6 +17,7 @@ function SearchForm({onSearch}) {
     const search = async (event) => {
         event.preventDefault();
         const params = removeEmptyValues(values);
+        console.log(params);
         if (typeof onSearch === 'function') {
             try {
                 await onSearch(params);
@@ -45,9 +46,10 @@ function SearchForm({onSearch}) {
                         <Form.Label>Name</Form.Label>
                         <Form.Control
                             placeholder="Enter Name"
-                            value={values.name}
                             name="name"
-                            onChange={handleChange}/>
+                            value={values.name}
+                            onChange={handleChange}
+                        />
                     </Form.Group>
                 </Col>
 
@@ -68,7 +70,6 @@ function SearchForm({onSearch}) {
                     <Form.Group className="mb-3">
                         <Form.Label>Username</Form.Label>
                         <Form.Control
-                            type="email"
                             placeholder="Enter Username"
                             value={values.username}
                             name="username"
@@ -89,8 +90,8 @@ function SearchForm({onSearch}) {
                     </Form.Group>
                 </Col>
             </Row>
-            <div className="d-flex bd-light justify-content-end">
-                <Button variant="secondary" type="reset" className="me-3">Reset</Button>
+            <div className="d-flex bg-light justify-content-end mt-3">
+                <Button variant="secondary" type="reset">Reset</Button>
                 <Button variant="outline-primary" type="submit" onClick={search}>
                     Search
                 </Button>
@@ -98,5 +99,3 @@ function SearchForm({onSearch}) {
         </Form>
     )
 }
-
-

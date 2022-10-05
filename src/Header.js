@@ -1,8 +1,8 @@
 import {Container, DropdownButton, Dropdown, Nav, Navbar, Form} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import React from 'react';
-import {useUserContext} from "./UserContext";
-import {useThemeContext} from "./ThemeContext";
+import {useUserContext} from "./contexts/UserContext";
+import {useThemeContext} from "./contexts/ThemeContext";
 import {PersonCircle as UserIcon} from "react-bootstrap-icons";
 
 
@@ -24,6 +24,8 @@ function Header({onThemeChange}) {
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/website/">Website</Nav.Link>
                         <Nav.Link as={Link} to="/users">Users</Nav.Link>
+                        <Nav.Link as={Link} to="/fancy-border">Fancy Border</Nav.Link>
+                        <Nav.Link as={Link} to="/timer">Timer</Nav.Link>
                         <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
                         <Nav.Link as={Link} to="/todo">Todo</Nav.Link>
                     </Nav>
@@ -38,7 +40,6 @@ function Header({onThemeChange}) {
                 </Navbar.Text>
                 <DropdownButton variant="outline-primary" title={(<><UserIcon className="me-1"/>{user.username}</>)}>
                     <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
-
                 </DropdownButton>
                 <Navbar.Text></Navbar.Text>
             </Container>

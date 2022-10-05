@@ -1,12 +1,13 @@
 import UsersTable from "./UsersTable";
+import SearchForm  from "./SearchForm";
 import React from 'react';
 import {useEffect, useState} from 'react';
 import axios from "axios";
 
-function UsersView () {
+function UsersView() {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-       search().catch(console.error);
+        search().catch(console.error);
     }, [])
 
     const search = async (params) => {
@@ -18,9 +19,13 @@ function UsersView () {
     //<SearchForm onSearch = {search}/>
     //<Stack gap={1} className="mb-3"></Stack>
 
-
     return (
+        <>
+            <SearchForm onSearch={search}/>
             <UsersTable data={users}/>
+        </>
+
     )
 }
+
 export default UsersView;

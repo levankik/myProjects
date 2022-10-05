@@ -1,7 +1,5 @@
 import {Button, Container} from "react-bootstrap";
-import {useUserContext} from "./UserContext";
-import UsersTable from "./UsersTable";
-
+import {useUserContext} from "./contexts/UserContext";
 function HomeView() {
     const {setUser} = useUserContext();
     return (

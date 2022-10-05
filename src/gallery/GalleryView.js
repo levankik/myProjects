@@ -7,23 +7,21 @@ import Photos from "./Photos";
 
 function GalleryView() {
     const [albums, setAlbums] = useState([]);
-    const [showModal, setShowModal] = useState(false);
     const [currentAlbum, setCurrentAlbum] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         async function loadAlbums() {
             const res = await axios.get('https://jsonplaceholder.typicode.com/albums');
             setAlbums(res.data)
         }
-
         loadAlbums().catch(console.error);
-
     }, []);
 
     const openAlbum = (album) => () => {
-           setCurrentAlbum(album);
-           setShowModal (true);
-       }
+        setCurrentAlbum(album);
+        setShowModal(true);
+    }
 
     const closeAlbum = () => setShowModal(false);
 
@@ -31,10 +29,10 @@ function GalleryView() {
         <>
             <Row className="m-3 g-0">
                 {
-                    albums.map ((album) => (
+                    albums.map((album) => (
                         <Col sm={3} key={album.id}>
                             <Card
-                                className="h-100 album-card"
+                                className="album-card" // აქ ამოვიღე h-100
                                 onClick={openAlbum(album)}
                             >
                                 <Card.Body>
@@ -51,9 +49,9 @@ function GalleryView() {
                         {currentAlbum?.title}
                     </Modal.Title>
                 </Modal.Header>
-                    <Modal.Body>
-                        <Photos album={currentAlbum}/>
-                    </Modal.Body>
+                <Modal.Body>
+                    <Photos album={currentAlbum}/>
+                </Modal.Body>
             </Modal>
         </>
     )

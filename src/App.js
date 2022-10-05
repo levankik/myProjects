@@ -3,16 +3,18 @@ import Layout from "./Layout";
 import Website from "./Website";
 import Alert from 'react-bootstrap/Alert';
 import React, {useState} from 'react';
-import UsersView from "./UsersView";
+import UsersView from "./getusers/UsersView";
+import Timer from "./timer/Timer";
 import GalleryView from "./gallery/GalleryView";
 import TodoView from "./todo/TodoView";
 import HomeView from "./HomeView";
-import UserContext from "./UserContext";
-import ThemeContext from "./ThemeContext";
+import UserContext from "./contexts/UserContext";
+import ThemeContext from "./contexts/ThemeContext";
 import LoginView from "./LoginView";
 import {useEffect} from "react";
 import axios from "axios";
 import api from "./todo/api";
+import FancyBorderView from "./fancy-border/FancyBorderView";
 
 
 function App() {
@@ -50,6 +52,8 @@ function App() {
                                 </Route>
                                 <Route path="website" element={<Website/>}/>
                                 <Route path="users" element={<UsersView/>}/>
+                                <Route path="fancy-border" element={<FancyBorderView/>}/>
+                                <Route path="timer" element={<Timer/>}/>
                                 <Route path="gallery" element={<GalleryView/>}></Route>
                                 <Route path="todo" element={<TodoView theme='light'/>}/>
                                 <Route path="*" element={<Alert variant="danger">page not found</Alert>}/>

@@ -19,6 +19,7 @@ function LoginView({error, onError}) {
     } catch(err){
         onError && onError(err)};
     }
+
     return (
         <Container>
             {

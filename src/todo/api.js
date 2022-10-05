@@ -12,6 +12,7 @@ api.interceptors.request.use(function (config) {
     startLoading();
     resetError();
     return config;
+
 }, function (error) {
     // Do something with request error
     return Promise.reject(error);
@@ -26,7 +27,7 @@ api.interceptors.response.use(function (response) {
     stopLoading();
     showError(error);
     if (axios.isAxiosError(error)) {
-        switch  (error.response.status) {
+        switch (error.response.status) {
             case  401:
                 break;
             case 404:
