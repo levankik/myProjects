@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb479d96-a151-4e4c-aeb9-06423648b0a6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../fancy-border/FancyBorderView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/FancyBorder.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../timer/Timer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FancyBorderView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FancyBorder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomeView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomeView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Loading.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../scss/Loading.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoadingContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../contexts/LoadingContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoginView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../LoginView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../getusers/SearchForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThemeContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../contexts/ThemeContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../contexts/UserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsersTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/../getusers/UsersTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UsersView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../getusers/UsersView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalleryView.js" beforeDir="false" afterPath="$PROJECT_DIR$/GalleryView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalleryView.scss" beforeDir="false" afterPath="$PROJECT_DIR$/GalleryView.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photos.js" beforeDir="false" afterPath="$PROJECT_DIR$/Photos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/TodoEditModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/TodoEditModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/TodoView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/TodoView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/api.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2C2PTsC5W6epEq4G2X1DD5gxfd5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/levan/WebstormProjects/softlab/kiknavelidzeSoftlab-/reactForm/src/todo",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb479d96-a151-4e4c-aeb9-06423648b0a6" name="Changes" comment="" />
+      <created>1657997775046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657997775046</updated>
+      <workItem from="1657997777019" duration="127000" />
+      <workItem from="1658945686594" duration="4346000" />
+      <workItem from="1659029639246" duration="7089000" />
+      <workItem from="1659117516398" duration="4343000" />
+      <workItem from="1659381600171" duration="323000" />
+      <workItem from="1663096053896" duration="350000" />
+      <workItem from="1663096416140" duration="12890000" />
+      <workItem from="1663173398995" duration="10777000" />
+      <workItem from="1663428579757" duration="3551000" />
+      <workItem from="1663436071685" duration="785000" />
+      <workItem from="1663480757394" duration="241000" />
+      <workItem from="1663513624934" duration="169000" />
+      <workItem from="1663514525884" duration="673000" />
+      <workItem from="1663590920854" duration="2031000" />
+      <workItem from="1663607319647" duration="117000" />
+      <workItem from="1664035926253" duration="6456000" />
+      <workItem from="1664050883138" duration="2056000" />
+      <workItem from="1664095298652" duration="7268000" />
+      <workItem from="1664199748955" duration="569000" />
+      <workItem from="1664706387798" duration="523000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../../../timerindep/src/timer/timer.js</url>
+          <line>46</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
